@@ -1,0 +1,15 @@
+﻿{
+  "name": "Nonnik Hesaplama Aracı",
+  "short_name": "Nonnik",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "Kediler için gerekli dozajı hesaplayan basit bir PWA",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

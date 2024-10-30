@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>Nonnik İçin Doz Hesaplama Aracı</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Dikey ortalama için */
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5; /* Arka plan rengi */
+        }
+
+        .container {
+            background-color: #ffffff; /* Çerçeve içi arka plan rengi */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(128, 0, 128, 0.5); /* Mor gölge */
+            width: 300px; /* Çerçevenin genişliği */
+            text-align: center; /* Metin ortalama */
+        }
+
+        h1 {
+            color: purple; /* Başlık rengi */
+        }
+
+        input {
+            width: calc(100% - 20px); /* Genişliği ortalayacak şekilde ayarla */
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Padding ve border dahil */
+        }
+
+        button {
+            width: calc(100% - 20px); /* Genişliği ortalayacak şekilde ayarla */
+            padding: 10px;
+            background-color: purple; /* Buton rengi */
+            color: white; /* Buton metin rengi */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: darkviolet; /* Buton hover rengi */
+            }
+
+        .result {
+            font-weight: bold; /* Kalın font */
+            color: purple; /* Sonuç rengi */
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nonnik İçin Doz Hesaplama Aracı</h1>
+        <label for="A">Ampul:</label>
+        <input type="number" id="A" placeholder="Ampul Değeri (mg/ml)">
+
+        <label for="B">Kedilerde Kullanılması Gereken Standart Doz:</label>
+        <input type="number" id="B" placeholder="Standart Doz (mg/kg)">
+
+        <label for="C">Kedinin Kilosu:</label>
+        <input type="number" id="C" placeholder="Kedinin Kilosu (kg)">
+
+        <button id="calculate">Hesapla</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("calculate").onclick = function () {
+            let A = parseFloat(document.getElementById("A").value);
+            let B = parseFloat(document.getElementById("B").value);
+            let C = parseFloat(document.getElementById("C").value);
+
+            if (!isNaN(A) && !isNaN(B) && !isNaN(C) && A > 0) {
+                let x = B * C;
+                let y = x / A;
+                document.getElementById("result").innerText = "Kullanılması Gereken Doz: " + y.toFixed(2) + " mg";
+            } else {
+                document.getElementById("result").innerText = "Lütfen geçerli değerler girin.";
+            }
+        }
+    </script>
+</body>
+</html>

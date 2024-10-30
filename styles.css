@@ -1,0 +1,50 @@
+﻿body {
+    font-family: 'Courier New', Courier, monospace; /* Retro font */
+    margin: 20px;
+}
+
+h1 {
+    color: purple; /* Mor renk */
+    font-family: 'Brush Script MT', cursive; /* El yazısı fontu */
+    font-size: 24px; /* Font boyutu */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    background-color: purple; /* Mor arka plan */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #7a2a7a; /* Hover etkisi için daha açık mor */
+    }
+
+#result {
+    color: purple; /* Mor renk */
+    font-weight: bold; /* Kalın font */
+    font-size: 18px; /* İsteğe bağlı font boyutu */
+}
+#resultTitle {
+    font-size: 16px; /* İstenilen boyut, örneğin 16px */
+    margin: 10px 0; /* Üstte ve altta biraz boşluk bırakmak için */
+}
